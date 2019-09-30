@@ -1,6 +1,8 @@
 package com.zhihaoliang.demo.service
 
 import com.zhihaoliang.demo.model.AyUser
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 
 /**
  *
@@ -16,4 +18,6 @@ interface AyUserService {
     fun save(ayUser: AyUser): AyUser
 
     fun delete(id: String)
+
+    fun findAll(pageable: Pageable):Page<AyUser>
 }

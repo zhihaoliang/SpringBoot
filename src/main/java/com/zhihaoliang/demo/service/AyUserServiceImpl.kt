@@ -2,8 +2,10 @@ package com.zhihaoliang.demo.service
 
 import com.zhihaoliang.demo.model.AyUser
 import com.zhihaoliang.demo.repository.AyUserRepository
+import org.springframework.data.domain.Page
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
+import org.springframework.data.domain.Pageable
 import javax.annotation.Resource
 
 /**
@@ -33,4 +35,9 @@ class AyUserServiceImpl :AyUserService {
     override fun delete(id: String) {
         ayUserRepository.deleteById(id)
     }
+
+    override fun findAll(pageable: Pageable): Page<AyUser>{
+        return ayUserRepository.findAll(pageable)
+    }
+
 }

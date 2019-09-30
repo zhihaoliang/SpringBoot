@@ -17,13 +17,13 @@ import javax.persistence.Table;
 @Table(name = "ay_user")
 public class AyUser {
 
-
     @Id
     private String id;
 
     private String name;
 
     private String password;
+
 
 
 }
