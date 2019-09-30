@@ -1,4 +1,4 @@
-package com.zhihaoliang.demo.model.filter
+package com.zhihaoliang.demo.filter
 
 import com.alibaba.druid.support.http.StatViewServlet
 import com.alibaba.druid.support.http.WebStatFilter
