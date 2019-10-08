@@ -4,6 +4,8 @@ import com.zhihaoliang.demo.model.AyUser
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.data.redis.core.RedisTemplate
+import org.springframework.data.redis.core.StringRedisTemplate
 import org.springframework.test.context.junit4.SpringRunner
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.RowMapper
@@ -25,9 +27,15 @@ class DemoApplicationTests {
     @Resource
     lateinit var jdbcTemplate: JdbcTemplate
 
+    @Resource
+    lateinit var redisTemplate: RedisTemplate<String, Any>
+
+    @Resource
+    lateinit var stringRedisTemplate: StringRedisTemplate
+
     @Test
-    fun mySqlTest(){
-        val sql  = "SELECT id,name,password FROM ay_user"
+    fun mySqlTest() {
+        val sql = "SELECT id,name,password FROM ay_user"
         val userList = jdbcTemplate.query(sql) { resultSet, i ->
             val ayUser = AyUser()
             ayUser.id = resultSet.getString("id")
@@ -37,5 +45,25 @@ class DemoApplicationTests {
         }
         println(userList)
 
+    }
+
+    @Test
+    fun testRedis(){
+        redisTemplate.opsForValue().set("hello","world")
+
+        val  world = redisTemplate.opsForValue().get("hello") as String
+        assert("world".equals(world))
+
+        redisTemplate.delete("hello")
+
+        redisTemplate.opsForValue().set("hello","hello")
+        val hellotmp =stringRedisTemplate.opsForValue().get("hello")
+        println(hellotmp)
+        assert(!"hello".equals(hellotmp))
+
+        stringRedisTemplate.opsForValue().set("hello","hello")
+        val hello =stringRedisTemplate.opsForValue().get("hello")
+        println(hello)
+        assert("hello".equals(hello))
     }
 }
