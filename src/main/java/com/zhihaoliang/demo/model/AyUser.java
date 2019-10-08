@@ -6,6 +6,7 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * @author zhihaoliang
@@ -15,7 +16,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "ay_user")
-public class AyUser {
+public class AyUser implements Serializable {
 
     @Id
     private String id;

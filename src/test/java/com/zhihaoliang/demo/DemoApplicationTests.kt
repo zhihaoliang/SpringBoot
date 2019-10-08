@@ -56,13 +56,13 @@ class DemoApplicationTests {
 
         redisTemplate.delete("hello")
 
-        redisTemplate.opsForValue().set("hello","hello")
-        val hellotmp =stringRedisTemplate.opsForValue().get("hello")
+        redisTemplate.opsForValue().set("hello1","hello")
+        val hellotmp =stringRedisTemplate.opsForValue().get("hello1")
         println(hellotmp)
-        assert(!"hello".equals(hellotmp))
+        assert(hellotmp == null)
 
-        stringRedisTemplate.opsForValue().set("hello","hello")
-        val hello =stringRedisTemplate.opsForValue().get("hello")
+        stringRedisTemplate.opsForValue().set("hello2","hello")
+        val hello =stringRedisTemplate.opsForValue().get("hello2")
         println(hello)
         assert("hello".equals(hello))
     }
