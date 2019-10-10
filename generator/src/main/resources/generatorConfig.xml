@@ -74,7 +74,7 @@
         <!--&lt;!&ndash;<ignoreColumn column="update_user"/>&ndash;&gt;-->
         <!--&lt;!&ndash;<ignoreColumn column="yn"/>&ndash;&gt;-->
         <!--</table>-->
-        <table tableName="ay_user" domainObjectName="" ></table>
+        <table tableName="ay_mood" domainObjectName="" ></table>
         <!-- <table tableName="a_turnover" domainObjectName="" ></table>-->
         <!-- <table tableName="a_pay_info" domainObjectName="" ></table>-->
 

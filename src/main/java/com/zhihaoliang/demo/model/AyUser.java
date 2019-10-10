@@ -1,10 +1,13 @@
 package com.zhihaoliang.demo.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Table(name = "ay_user")
 @Entity
+@Data
 public class AyUser implements Serializable {
     /**
      * 主键
