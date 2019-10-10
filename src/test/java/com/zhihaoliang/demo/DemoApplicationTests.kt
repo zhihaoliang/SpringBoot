@@ -1,6 +1,8 @@
 package com.zhihaoliang.demo
 
 import com.zhihaoliang.demo.model.AyUser
+import com.zhihaoliang.demo.service.msg.AyMoodProducer
+import org.apache.activemq.command.ActiveMQQueue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.boot.test.context.SpringBootTest
@@ -65,5 +67,14 @@ class DemoApplicationTests {
         val hello =stringRedisTemplate.opsForValue().get("hello2")
         println(hello)
         assert("hello".equals(hello))
+    }
+
+    @Resource
+    lateinit var ayMoodProducer: AyMoodProducer
+
+    @Test
+    fun test() {
+        val  destination = ActiveMQQueue("ay.queue")
+        ayMoodProducer.sendMessage(destination,"MQ")
     }
 }
