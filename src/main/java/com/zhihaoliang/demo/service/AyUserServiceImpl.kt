@@ -1,5 +1,6 @@
 package com.zhihaoliang.demo.service
 
+import com.zhihaoliang.demo.dao.base.dao.AyUserMapper
 import com.zhihaoliang.demo.model.AyUser
 import com.zhihaoliang.demo.repository.AyUserRepository
 import org.springframework.data.domain.Page
@@ -22,12 +23,15 @@ open class AyUserServiceImpl :AyUserService {
     @Resource
     lateinit var ayUserRepository: AyUserRepository
 
+    @Resource
+    lateinit var ayUserMapper: AyUserMapper
+
    override fun findById(id: String): AyUser? {
         return ayUserRepository.findByIdOrNull(id)
     }
 
     override fun findAll(): List<AyUser> {
-        return ayUserRepository.findAll()
+        return ayUserMapper.selectAll()
     }
 
     override fun save(ayUser: AyUser): AyUser {

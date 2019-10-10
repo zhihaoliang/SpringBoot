@@ -1,9 +1,11 @@
 package com.zhihaoliang.demo.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "ay_user")
-public class AyUser {
+@Entity
+public class AyUser implements Serializable {
     /**
      * 主键
      */

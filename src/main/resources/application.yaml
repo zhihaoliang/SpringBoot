@@ -7,5 +7,5 @@ spring:
 logging:
   config: classpath:log4j2.xml
 mybatis:
-  mapper-locations: classpath:/mappers/*Mapper.xml
-  type-aliases-package: com.zhihaoliang.demo.dao
+  mapper-locations: classpath:src/main/java/com/zhihaoliang/demo/dao/base/mapping/*Mapper.xml
+  type-aliases-package: com.zhihaoliang.demo.dao.base.dao

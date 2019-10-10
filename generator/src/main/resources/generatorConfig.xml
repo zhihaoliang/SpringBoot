@@ -11,7 +11,7 @@
         <property name="endingDelimiter" value="`"/>
 
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="com.ipark.common.mybatis.BaseInfoMapper"/>
+            <property name="mappers" value="com.zhihaoliang.demo.dao.base.base.BaseInfoMapper"/>
         </plugin>
 
         <!-- 注释产生配置 -->
@@ -60,11 +60,11 @@
 
         <!-- 生成sqlXML文件路径配置 -->
         <!--         <sqlMapGenerator targetPackage="com.tark.sds.mapping" targetProject="../sds-dao/src/main/java"/> -->
-        <sqlMapGenerator targetPackage="com.zhihaoliang.demo.dao.mapping" targetProject="${mybatis.generate.path}"/>
+        <sqlMapGenerator targetPackage="com.zhihaoliang.demo.dao.base.mapping" targetProject="${mybatis.generate.path}"/>
 
         <!-- 生成DAO的类文件路径配置 -->
         <!--         <javaClientGenerator targetPackage="com.tark.sds.dao" targetProject="../sds-dao/src/main/java" type="XMLMAPPER"/> -->
-        <javaClientGenerator targetPackage="com.zhihaoliang.demo.dao" targetProject="${mybatis.generate.path}" type="XMLMAPPER"/>
+        <javaClientGenerator targetPackage="com.zhihaoliang.demo.dao.base.dao" targetProject="${mybatis.generate.path}" type="XMLMAPPER"/>
 
         <!--添加要生成的表 -->
         <!--<table tableName="t_acct_cust_info" domainObjectName="" >-->
