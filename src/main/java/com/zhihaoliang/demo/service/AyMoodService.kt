@@ -12,4 +12,6 @@ interface AyMoodService {
     fun save(ayMood: AyMood):Int
 
     fun read():List<AyMood>
+
+    fun asynSave(ayMood: AyMood):String
 }

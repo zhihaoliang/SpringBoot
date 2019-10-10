@@ -74,7 +74,6 @@ class DemoApplicationTests {
 
     @Test
     fun test() {
-        val  destination = ActiveMQQueue("ay.queue")
-        ayMoodProducer.sendMessage(destination,"MQ")
+        ayMoodProducer.sendMessage("ay.queue","MQ")
     }
 }
